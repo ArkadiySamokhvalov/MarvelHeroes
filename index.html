@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marvel Heroes</title>
+
+  <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div class="overlay"></div>
+
+  <div class="container">
+
+    <div id="header" class="header">
+      <h1 class="header__title">Marvel Heroes</h1>
+      <div id="filter" class="filter">
+        <button class="filter__select">
+          <span class="filter__result">Select by movie name</span>
+          <span class="arrow-container">
+            <b class="arrow"></b>
+          </span>
+        </button>
+        <div class="filter__block">
+          <input type="text" name="movie" class="filter__search">
+          <ul class="filter__list">
+            <li class="filter__item">Movie</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="cards" class="cards row">
+      <div class="cards__item flipper-container col-xl-3 col-lg-4 col-sm-6 col-12">
+        <div class="flipper">
+          <div class="flipper__front">
+            <img src="img/OVTb.gif" class="lazy"
+              data-src="" alt=""/>
+          </div>
+
+          <div class="flipper__back">
+            <img src="img/OVTb.gif" data-src="" class="back lazy" alt=""/>
+            <div class="overlay"></div>
+            <div class="facts">
+              <h3 class="facts__name">Name of Hero</h3>
+              <p class="facts__item">
+                <strong class="facts__item_name">Name of fact: </strong>
+                <span class="facts__item_value">Value of fact</span></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <a href="#header" class="scrollup">
+      <img src="img/green-arrow.svg">
+    </a>
+
+  </div>
+
+  <script src="dist/main.js"></script>
+</body>
+
+</html>

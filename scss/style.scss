@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Tahoma, sans-serif;
+  font-size: 17px;
+  background: url("../img/background.jpg") top center no-repeat fixed;
+  background-size: cover;
+}
+
+.hide {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.header {
+  padding: 30px 0;
+
+  &__title {
+    margin-bottom: 30px;
+    text-align: center;
+    color: white;
+    text-shadow: 0 -1px 0 #000000,
+      0 -1px 0 #000000,
+      0 1px 0 #000000,
+      0 1px 0 #000000,
+      -1px 0 0 #000000,
+      1px 0 0 #000000,
+      -1px 0 0 #000000,
+      1px 0 0 #000000,
+      -1px -1px 0 #000000,
+      1px -1px 0 #000000,
+      -1px 1px 0 #000000,
+      1px 1px 0 #000000,
+      -1px -1px 0 #000000,
+      1px -1px 0 #000000,
+      -1px 1px 0 #000000,
+      1px 1px 0 #000000;
+  }
+}
+
+.filter {
+  position: relative;
+
+  &__select {
+    position: absolute;
+    left: 50%;
+    display: block;
+    transform: translate(-50%, 0);
+    min-width: 290px;
+    width: 50%;
+    min-height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    background: #ffffff;
+    color: #aaa;
+    font-size: 14px;
+    z-index: 1;
+    cursor: pointer;
+
+    &_click {
+      border-bottom-right-radius: unset;
+      border-bottom-left-radius: unset;
+    }
+  }
+
+  &__block {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    display: none;
+    transform: translate(-50%, 0);
+    padding: 0 -1px;
+    min-width: 290px;
+    width: 50%;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    border-top: unset;
+    background: white;
+    z-index: 1;
+
+    &_show {
+      display: block;
+    }
+  }
+
+  &__search {
+    display: block;
+    padding: 4px;
+    height: 35px;
+    width: 98%;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    margin: 5px auto;
+  }
+
+  &__list {
+    list-style: none;
+    overflow-y: scroll;
+    max-height: 325px;
+  }
+
+  &__item {
+    padding: 10px;
+    height: 40px;
+    cursor: pointer;
+
+    &_checked {
+      background: gray;
+      color: white;
+    }
+
+    &_hover {
+      background: lightblue;
+      color: white;
+    }
+  }
+
+}
+
+.arrow {
+  border-color: #888 transparent transparent transparent;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  height: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+
+  &_click {
+    border-color: transparent transparent #888 transparent;
+    border-width: 0 4px 5px 4px;
+  }
+
+  &-container {
+    height: 26px;
+    position: absolute;
+    top: 15%;
+    right: 1px;
+    width: 20px;
+  }
+}
+
+.cards {
+  justify-content: center;
+  margin-top: 40px;
+
+  &__item {
+    max-width: 290px;
+    margin-bottom: 30px;
+  }
+}
+
+.flipper {
+  position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  &-container {
+    perspective: 1000px;
+
+    &:hover .flipper,
+    &_hover .flipper {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__front {
+    z-index: 2;
+    transform: rotateY(0deg);
+  }
+
+  &__back {
+    transform: rotateY(180deg);
+
+    img {
+      position: absolute;
+      z-index: -1;
+      transform: rotateY(180deg);
+    }
+
+    .overlay {
+      border-radius: 10px;
+    }
+  }
+
+  &__front,
+  &__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px -1px 12px 0px rgba(0, 0, 0, 0.75);
+
+    img {
+      width: 100%;
+      height: 380px;
+      background-size: cover;
+      border-radius: 10px;
+    }
+  }
+
+  &-container,
+  &__front,
+  &__back {
+    height: 380px;
+  }
+}
+
+.facts {
+  padding: 10px;
+  color: white;
+  text-shadow: 0 -1px 0 #000000, 0 -1px 0 #000000, 0 1px 0 #000000, 0 1px 0 #000000, -1px 0 0 #000000, 1px 0 0 #000000, -1px 0 0 #000000, 1px 0 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+
+  &__name {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+.scrollup {
+  position: fixed;
+  right: 3%;
+  bottom: 10%;
+
+  img {
+    width: 40px;
+    //height: 30px;
+    transform: rotate(90deg);
+  }
+}
